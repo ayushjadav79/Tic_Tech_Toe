@@ -1,7 +1,7 @@
 import React from 'react';
 import { UserButton, SignedIn, SignOutButton } from '@clerk/clerk-react';
 import './dashboard.css';
-import botImage from 'D:/Coding/React programs/Hacktastic/frontend/src/assets/logo.jpg';
+import botImage from 'D:/Coding/React programs/Hacktastic/frontend/src/assets/logo-removebg-preview.png';
 import { useNavigate } from 'react-router-dom';
 
 const Card = ({ title, description, buttonText, redirectTo }) => {

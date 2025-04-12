@@ -200,11 +200,11 @@ const CareerSuggestions = ({ testScores }) => {
                 </div>
               </div>
             </CardContent>
-            <CardFooter>
+            {/* <CardFooter>
               <Button variant="outline" className="w-full">
                 Learn More
               </Button>
-            </CardFooter>
+            </CardFooter> */}
           </Card>
         ))}
       </div>

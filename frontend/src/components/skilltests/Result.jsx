@@ -1,6 +1,6 @@
 // src/components/skilltests/Result.jsx
 import React from 'react';
-
+import './technical-skills.css';
 export default function Result({ score, total }) {
   return (
     <div className="text-center p-6">
