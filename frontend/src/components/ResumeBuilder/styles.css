@@ -2,123 +2,234 @@
 
 /* Global styles */
 body {
-    background-color: #f0f4ff; /* Light blue background similar to the image */
-    font-family: 'Inter', sans-serif; /* A clean, modern font */
-    margin: 0;
-    padding: 0;
+  background-color: #f5faff; /* Light blue background */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.resume-builder-container {
+  background-color: #f5faff;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading and subtitle */
+.resume-builder-container h1 {
+  color: #1e3a8a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.resume-builder-container .text-gray-600 {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Grid layout for the main container */
+.resume-builder-container .grid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Form section */
+.resume-builder-container .form-section {
+  width: 100%;
+}
+
+/* Card styling */
+.resume-builder-container .resume-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.resume-builder-container .resume-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card content */
+.resume-builder-container .card-content {
+  padding: 1.5rem;
+}
+
+/* Headings */
+.resume-builder-container h2 {
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Tabs styling */
+.resume-builder-container .tabs {
+  margin-top: 1.5rem;
+}
+
+.resume-builder-container .tabs-list {
+  display: grid;
+  gap: 0.5rem;
+  background-color: #f5faff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-builder-container .tabs-trigger {
+  background-color: #fff;
+  color: #1e3a8a;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-builder-container .tabs-trigger:hover {
+  background-color: #e0f2fe;
+}
+
+.resume-builder-container .tabs-trigger[data-state="active"] {
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+/* Tab content */
+.resume-builder-container .tab-content {
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.resume-builder-container .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.resume-builder-container .button {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.resume-builder-container .button:hover {
+  background-color: #2563eb;
+}
+
+.resume-builder-container .button-destructive {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.resume-builder-container .button-destructive:hover {
+  background-color: #dc2626;
+}
+
+/* Progress Tracker */
+.resume-builder-container .progress-tracker {
+  background-color: #e5e7eb;
+  border-radius: 0.5rem;
+  height: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.resume-builder-container .progress-tracker > div {
+  background-color: #1e3a8a;
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+/* Preview section */
+.resume-builder-container .preview-section {
+  width: 100%;
+}
+
+.resume-builder-container .preview-heading {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Table container */
+.resume-builder-container .preview-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table styling */
+.resume-builder-container .resume-preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Table headers */
+.resume-builder-container .resume-preview-table th {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* Table cells */
+.resume-builder-container .resume-preview-table td {
+  color: #6b7280;
+  padding: 0.75rem;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* Last row border */
+.resume-builder-container .resume-preview-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect for table rows */
+.resume-builder-container .resume-preview-table tbody tr:hover {
+  background-color: #f5faff;
+}
+
+/* Responsive adjustments */
+@media (min-width: 1024px) {
+  .resume-builder-container .grid {
+    grid-template-columns: 2fr 1fr;
   }
-  
-  /* Grid layout for the main container */
-  .grid {
-    display: grid;
-    gap: 1.5rem; /* Matches the gap-6 in Tailwind (1.5rem) */
-    padding: 2rem;
+
+  .resume-builder-container .tabs-list {
+    grid-template-columns: repeat(6, 1fr);
   }
-  
-  /* Card styling (for both the form and preview sections) */
-  .card {
-    background-color: #ffffff; /* White background for cards */
-    border-radius: 1rem; /* Rounded corners like in the image */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-    border: none; /* Remove default border */
+}
+
+@media (max-width: 768px) {
+  .resume-builder-container .tabs-list {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  /* Card content padding */
-  .card-content {
-    padding: 1.5rem; /* Matches p-6 in Tailwind (1.5rem) */
-  }
-  
-  /* Headings */
-  h2 {
-    color: #1e3a8a; /* Dark blue for headings, matching the image */
-    font-size: 1.25rem; /* Matches text-xl in Tailwind */
-    font-weight: 600; /* Matches font-semibold */
-    margin-bottom: 1rem; /* Matches mb-4 in Tailwind */
-  }
-  
-  /* Tabs styling */
-  .tabs-list {
-    display: grid;
-    gap: 0.5rem;
-    background-color: #f0f4ff; /* Light blue background for tabs */
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1rem; /* Matches mb-4 in Tailwind */
-  }
-  
-  .tabs-trigger {
-    background-color: #ffffff;
-    color: #1e3a8a; /* Dark blue text */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .tabs-trigger:hover {
-    background-color: #dbeafe; /* Light blue hover effect */
-  }
-  
-  .tabs-trigger[data-state="active"] {
-    background-color: #3b82f6; /* Blue for active tab */
-    color: #ffffff; /* White text for active tab */
-  }
-  
-  /* Buttons */
-  .button {
-    background-color: #3b82f6; /* Blue button color matching the image */
-    color: #ffffff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    border: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Matches gap-2 in Tailwind */
-    transition: background-color 0.3s ease;
-  }
-  
-  .button:hover {
-    background-color: #2563eb; /* Slightly darker blue on hover */
-  }
-  
-  .button-destructive {
-    background-color: #ef4444; /* Red for destructive actions like reset */
-    color: #ffffff;
-  }
-  
-  .button-destructive:hover {
-    background-color: #dc2626; /* Darker red on hover */
-  }
-  
-  /* Progress Tracker (assuming it's a bar or similar) */
-  .progress-tracker {
-    background-color: #e5e7eb; /* Light gray background for progress bar */
-    border-radius: 0.5rem;
-    height: 0.5rem;
-    overflow: hidden;
-    margin-bottom: 1.5rem; /* Matches mt-6 in Tailwind */
-  }
-  
-  .progress-tracker > div {
-    background-color: #3b82f6; /* Blue for the progress fill */
-    height: 100%;
-    transition: width 0.3s ease;
-  }
-  
-  /* Responsive adjustments */
-  @media (min-width: 1024px) {
-    .grid {
-      grid-template-columns: 2fr 1fr; /* Matches lg:grid-cols-3 with 2:1 ratio */
-    }
-  
-    .tabs-list {
-      grid-template-columns: repeat(6, 1fr); /* Matches md:grid-cols-6 */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .tabs-list {
-      grid-template-columns: repeat(3, 1fr); /* Matches grid-cols-3 */
-    }
-  }
+}

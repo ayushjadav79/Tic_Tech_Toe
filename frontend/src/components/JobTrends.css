@@ -1,91 +1,231 @@
+/* JobTrends.css */
+
 /* General container */
-/* @import "tailwindcss"; */
-.technical-test-container {
-    background-color: #0f0f0f;
-    color: #ffffff;
-    padding: 2rem;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  /* Timer */
-  .timer-box {
-    background-color: #1f1f1f;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    font-weight: 500;
-    color: #d4d4d4;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  
-  /* Question Card */
-  .question-card {
-    border: 1px solid #3f3f46;
-    border-radius: 12px;
-    padding: 1.5rem;
-    background-color: #18181b;
-    box-shadow: 0 0 0 1px #262626;
-  }
-  
-  .question-card h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  .option {
-    margin-bottom: 0.75rem;
-    padding: 0.75rem;
-    border: 1px solid #3f3f46;
-    border-radius: 8px;
-    background-color: transparent;
-    color: #e4e4e7;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .option:hover {
-    background-color: #27272a;
-    border-color: #6366f1;
-  }
-  
-  .option.selected {
-    background-color: #1e1e2e;
-    border-color: #4f46e5;
-    color: #c7d2fe;
-  }
-  
-  .option input[type='radio'] {
-    accent-color: #6366f1;
-  }
-  
-  /* Buttons */
-  button {
-    background-color: #ffffff;
-    color: #000000;
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #e5e5e5;
-  }
-  
-  button:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
-  
-  /* Navigation buttons */
-  .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-  }
-  
+.job-trends-container {
+  background-color: #f5faff; /* Light blue background */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.job-trends-container .header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.job-trends-container .header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.job-trends-container .header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.job-trends-container .header-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #1e3a8a;
+}
+
+.job-trends-container .header-title h1 {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.job-trends-container .header-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.job-trends-container .nav-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6b7280;
+  transition: all 0.2s ease;
+}
+
+.job-trends-container .nav-button:hover {
+  color: #1e3a8a;
+  background-color: #e0f2fe;
+}
+
+.job-trends-container .nav-button.active {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+}
+
+/* Main content */
+.job-trends-container .main-content {
+  max-width: 900px;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+/* Section */
+.job-trends-container .section {
+  margin-bottom: 3rem;
+}
+
+/* Section heading */
+.job-trends-container .section-heading {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Card grid */
+.job-trends-container .card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Card styling */
+.job-trends-container .job-trends-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.job-trends-container .job-trends-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card content */
+.job-trends-container .card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Card header */
+.job-trends-container .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* Card title */
+.job-trends-container .card-title {
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Trend info */
+.job-trends-container .trend-info {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #10b981; /* Green for positive trend */
+}
+
+.job-trends-container .trend-percentage {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.job-trends-container .trend-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Card description */
+.job-trends-container .card-description {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Skills list */
+.job-trends-container .skills-list {
+  margin-top: 1rem;
+  flex-grow: 1;
+}
+
+.job-trends-container .skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-trends-container .skill-icon {
+  width: 1rem;
+  height: 1rem;
+  color: #1e3a8a;
+}
+
+/* Table container */
+.job-trends-container .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table styling */
+.job-trends-container .job-trends-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Table headers */
+.job-trends-container .job-trends-table th {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+/* Table cells */
+.job-trends-container .job-trends-table td {
+  color: #6b7280;
+  padding: 0.75rem;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* Last row border */
+.job-trends-container .job-trends-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect for table rows */
+.job-trends-container .job-trends-table tbody tr:hover {
+  background-color: #f5faff;
+}

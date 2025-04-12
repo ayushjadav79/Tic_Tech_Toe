@@ -1,105 +1,248 @@
+/* TechnicalTest.css */
+
 /* General container */
 .technical-test-container {
-    background-color: #f5faff; /* Light blue background similar to the image */
-    color: #1e3a8a; /* Dark blue text to match the image's typography */
-    padding: 2rem;
-    min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content */
-  }
-  
-  /* Timer */
-  .timer-box {
-    background-color: #fff; /* White background for the timer */
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem; /* Rounded corners */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-    font-weight: 500;
-    color: #fff;
-    display: inline-block;
-    margin-bottom: 1rem;
-  }
-  
-  /* Question Card */
-  .question-card {
-    border: none; /* Remove border to match the image's card style */
-    border-radius: 1rem; /* Rounded corners like in the image */
-    padding: 1.5rem;
-    background-color: #fff; /* White background for the card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-    width: 100%;
-    max-width: 600px; /* Limit width for better readability */
-    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
-  }
-  
-  .question-card:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-  }
-  
-  .question-card h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #fff; /* Dark blue for headings */
-  }
-  
-  /* Options */
-  .option {
-    margin-bottom: 0.75rem;
-    padding: 0.75rem;
-    border: 1px solid #d1d5db; /* Light gray border */
-    border-radius: 0.5rem; /* Rounded corners */
-    background-color: #f9fafb; /* Very light gray background */
-    color: #1e3a8a; /* Dark blue text */
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  .option:hover {
-    background-color: #e5e7eb; /* Slightly darker gray on hover */
-    border-color: #3b82f6; /* Blue border on hover */
-  }
-  
-  .option.selected {
-    background-color: #e0f2fe; /* Light blue background for selected option */
-    border-color: #3b82f6; /* Blue border for selected */
-    color: #1e3a8a; /* Dark blue text */
-  }
-  
-  .option input[type='radio'] {
-    accent-color: #3b82f6; /* Blue radio button to match the image's button color */
-  }
-  
-  /* Buttons */
-  button {
-    background-color: #3b82f6; /* Blue background for buttons, matching the image */
-    color: #fff; /* White text */
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 0.5rem; /* Rounded corners */
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #2563eb; /* Darker blue on hover */
-  }
-  
-  button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  /* Navigation buttons */
-  .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-    width: 100%;
-    max-width: 600px; /* Match the question card width */
-  }
+  background-color: #f5faff; /* Light blue background */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Heading and subtitle */
+.technical-test-container h1 {
+  color: #1e3a8a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.technical-test-container .text-gray-600 {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Question section */
+.technical-test-container .question-section {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Timer */
+.technical-test-container .timer-box {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  color: #1e3a8a; /* Dark blue text */
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+/* Question Card */
+.technical-test-container .question-card {
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 600px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.technical-test-container .question-card:hover {
+  transform: translateY(-5px);
+}
+
+.technical-test-container .question-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1e3a8a; /* Dark blue for headings */
+}
+
+/* Options */
+.technical-test-container .option {
+  margin-bottom: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.technical-test-container .option:hover {
+  background-color: #f5faff;
+  border-color: #1e3a8a;
+}
+
+.technical-test-container .option.selected {
+  background-color: #e0f2fe;
+  border-color: #1e3a8a;
+  color: #1e3a8a;
+}
+
+.technical-test-container .option input[type='radio'] {
+  accent-color: #1e3a8a;
+}
+
+/* Buttons */
+.technical-test-container button {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.technical-test-container button:hover {
+  background-color: #2563eb;
+}
+
+.technical-test-container button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Navigation buttons */
+.technical-test-container .nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+/* Results section */
+.technical-test-container .results-section {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Results heading */
+.technical-test-container .results-heading {
+  color: #1e3a8a;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Results score */
+.technical-test-container .results-score {
+  color: #6b7280;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Table container */
+.technical-test-container .results-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Table styling */
+.technical-test-container .results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+/* Table headers */
+.technical-test-container .results-table th {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #d1d5db;
+}
+
+/* Table cells */
+.technical-test-container .results-table td {
+  color: #6b7280;
+  padding: 0.75rem;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* Last row border */
+.technical-test-container .results-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Correct/incorrect styles */
+.technical-test-container .results-table .correct {
+  color: #10b981; /* Green for correct */
+}
+
+.technical-test-container .results-table .incorrect {
+  color: #ef4444; /* Red for incorrect */
+}
+
+/* Hover effect for table rows */
+.technical-test-container .results-table tbody tr:hover {
+  background-color: #f5faff;
+}
+
+/* Result component styles (new addition) */
+.technical-test-container .text-center {
+  background-color: #fff; /* White background for the result card */
+  border-radius: 1rem; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  padding: 1.5rem; /* Matches p-6 */
+  width: 100%;
+  max-width: 600px; /* Matches question card width */
+  margin: 0 auto; /* Center the card */
+  transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+}
+
+.technical-test-container .text-center:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.technical-test-container .text-2xl {
+  color: #1e3a8a; /* Dark blue for the heading */
+  font-size: 2rem; /* Matches text-2xl */
+  font-weight: 700; /* Matches font-bold */
+  margin-bottom: 1rem; /* Matches mb-4 */
+  text-align: center;
+}
+
+.technical-test-container .text-lg {
+  color: #6b7280; /* Gray for the score text */
+  font-size: 1.125rem; /* Matches text-lg */
+  text-align: center;
+}
+
+.technical-test-container .text-green-600 {
+  color: #10b981; /* Green for the feedback message, consistent with previous pages */
+  font-weight: 600; /* Matches font-semibold */
+  margin-top: 0.5rem; /* Matches mt-2 */
+  text-align: center;
+}

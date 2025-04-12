@@ -1,207 +1,210 @@
 /* CareerSuggestions.css */
 
-/* General container styling */
 .container {
-    background-color: #f5faff; /* Light blue background similar to the image */
-    min-height: 100vh; /* Ensure it takes full height */
-    padding: 2rem 1rem; /* Padding for the container */
-  }
-  
-  /* Main heading and description */
-  h1 {
-    color: #1e3a8a; /* Dark blue color for headings, matching the image */
-    font-size: 2.5rem; /* Slightly smaller than the image's heading */
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  .text-gray-600 {
-    color: #6b7280; /* Gray color for the description */
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-  
-  /* Filter section */
-  .flex.justify-end {
-    margin-bottom: 1.5rem;
-  }
-  
-  .flex.items-center.gap-2 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  
-  span {
-    color: #1e3a8a;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  
-  /* Select dropdown styling */
-  .w-\[180px\] {
-    border: 1px solid #d1d5db; /* Light gray border */
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    background-color: #fff;
-    color: #1e3a8a;
-    font-size: 0.9rem;
-  }
-  
-  /* Grid layout for cards */
-  .grid {
-    display: grid;
-    gap: 1.5rem; /* Space between cards */
-  }
-  
-  @media (min-width: 768px) {
-    .md\:grid-cols-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .lg\:grid-cols-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-  }
-  
-  /* Card styling */
-  .overflow-hidden {
-    background-color: #fff; /* White background for cards */
-    border-radius: 1rem; /* Rounded corners like in the image */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-    padding: 1.5rem;
-    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
-  }
-  
-  .overflow-hidden:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-  }
-  
-  /* Card header */
-  .pb-2 {
-    padding-bottom: 0.5rem;
-  }
-  
-  .flex.justify-between.items-start {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .text-xl {
-    color: #1e3a8a; /* Dark blue for card titles */
-    font-size: 1.25rem;
-    font-weight: 600;
-  }
-  
-  .text-gray-600 {
-    color: #6b7280; /* Gray for descriptions */
-    font-size: 0.9rem;
-    margin-top: 0.25rem;
-  }
-  
-  /* Badge styling */
-  .ml-2 {
-    margin-left: 0.5rem;
-  }
-  
-  .bg-blue-500.text-white {
-    background-color: #3b82f6; /* Blue background for high match percentage */
-    color: #fff;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  .border-gray-300 {
-    border: 1px solid #d1d5db; /* Outline for lower match percentages */
-    color: #1e3a8a;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
-  
-  /* Card content */
-  .space-y-4 {
-    margin-top: 1rem;
-  }
-  
-  .text-sm.font-medium {
-    color: #1e3a8a; /* Dark blue for section headings */
-    font-size: 0.875rem;
-    font-weight: 500;
-  }
-  
-  .flex.items-center.gap-2.mb-1 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  .h-4.w-4 {
-    width: 1rem;
-    height: 1rem;
-    color: #1e3a8a; /* Icon color */
-  }
-  
-  .text-sm.text-gray-600 {
-    color: #6b7280;
-    font-size: 0.875rem;
-  }
-  
-  /* Skills badges */
-  .flex.flex-wrap.gap-1.mt-1 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-    margin-top: 0.25rem;
-  }
-  
-  .text-xs {
-    background-color: #e5e7eb; /* Light gray background for skill badges */
-    color: #1e3a8a;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.375rem;
-    font-size: 0.75rem;
-  }
-  
-  /* No suggestions message */
-  .text-center.py-12 {
-    text-align: center;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
-  
-  .text-gray-500 {
-    color: #9ca3af;
-    font-size: 1rem;
-  }
-  
-  /* Button styling */
-  .mt-4 {
-    margin-top: 1rem;
-  }
-  
-  .border-gray-300.text-blue-600 {
-    border: 1px solid #d1d5db;
-    background-color: #3b82f6; /* Blue background for buttons */
-    color: #fff;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .border-gray-300.text-blue-600:hover {
-    background-color: #2563eb; /* Darker blue on hover */
-  }
+  background-color: #f5faff;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container h1 {
+  color: #1e3a8a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.container .text-gray-600 {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container .card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.container .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.container .third-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.container .overflow-hidden {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  min-width: 280px;
+  width: 100%;
+  max-width: 360px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.container .overflow-hidden:hover {
+  transform: translateY(-5px);
+}
+
+.container .card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.container .card-icon {
+  width: 2rem;
+  height: 2rem;
+  color: #1e3a8a;
+  margin-bottom: 1rem;
+}
+
+.container .pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.container .text-xl {
+  color: #1e3a8a;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.container .text-gray-600 {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  line-height: 1.5;
+}
+
+.container .list-items {
+  margin-top: 1rem;
+  flex-grow: 1;
+}
+
+.container .list-items ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+.container .card-button {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+}
+
+.container .card-button:hover {
+  background-color: #2563eb;
+}
+
+.container .button-arrow {
+  font-size: 1rem;
+}
+
+.container .flex.justify-end {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.container .flex.items-center.gap-2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container span {
+  color: #1e3a8a;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.container .w-\[180px\] {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #1e3a8a;
+  font-size: 0.9rem;
+}
+
+.container .ml-2 {
+  margin-left: 0.5rem;
+}
+
+.container .bg-blue-500.text-white {
+  background-color: #3b82f6;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.container .border-gray-300 {
+  border: 1px solid #d1d5db;
+  color: #1e3a8a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.container .flex.flex-wrap.gap-1.mt-1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.container .text-xs {
+  background-color: #e5e7eb;
+  color: #1e3a8a;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+}
+
+.container .text-center.py-12 {
+  text-align: center;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.container .text-gray-500 {
+  color: #9ca3af;
+  font-size: 1rem;
+}
