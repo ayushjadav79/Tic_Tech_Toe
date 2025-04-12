@@ -1,0 +1,89 @@
+.skill-assessment-container {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom right, #eff6ff, #dbeafe);
+    min-height: 100vh;
+    color: #1e3a8a;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+  }
+  
+  .skill-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  
+  .skill-subtitle {
+    font-size: 1.125rem;
+    color: #475569;
+    margin-bottom: 2.5rem;
+  }
+  
+  .skill-card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .skill-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 10px 15px rgba(30, 64, 175, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .skill-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 20px rgba(30, 64, 175, 0.15);
+  }
+  
+  .skill-icon {
+    background-color: #1e3a8a;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #1e3a8a;
+  }
+  
+  .skill-card-description {
+    font-size: 0.95rem;
+    color: #334155;
+    margin-bottom: 1rem;
+  }
+  
+  .skill-points {
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    color: #475569;
+    font-size: 0.9rem;
+  }
+  
+  .skill-button {
+    background: linear-gradient(to right, #3b82f6, #1e40af);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .skill-button:hover {
+    background: linear-gradient(to right, #2563eb, #1e3a8a);
+  }
+  
