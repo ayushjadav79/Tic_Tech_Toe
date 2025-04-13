@@ -1,10 +1,10 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "D:/Coding/React programs/Hacktastic/frontend/src/components/ui/card.jsx"
-import { Button } from "D:/Coding/React programs/Hacktastic/frontend/src/components/ui/button.jsx"
-import { Badge } from "D:/Coding/React programs/Hacktastic/frontend/src/components/ui/badge.jsx"
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "D:/Coding/React programs/Hacktastic/frontend/src/components/ui/select.jsx"
+import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "C:/Users/bhavy/Tic_Tech_Toe-demo-/frontend/src/components/ui/card.jsx"
+import { Button } from "C:/Users/bhavy/Tic_Tech_Toe-demo-/frontend/src/components/ui/button.jsx"
+import { Badge } from "C:/Users/bhavy/Tic_Tech_Toe-demo-/frontend/src/components/ui/badge.jsx"
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "C:/Users/bhavy/Tic_Tech_Toe-demo-/frontend/src/components/ui/select.jsx"
 import { Briefcase, BookOpen, Star, Filter } from "lucide-react"
 import './CareerSuggestions.css'
 

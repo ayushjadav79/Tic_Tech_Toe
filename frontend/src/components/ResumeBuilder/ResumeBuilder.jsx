@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import ProgressTracker from './ProgressTracker';
@@ -8,10 +8,12 @@ import SkillsForm from './SkillsForm';
 import ExperienceForm from './ExperienceForm';
 import EducationForm from './EducationForm';
 import ProjectsForm from './ProjectForm';
+import ResumePreview from './ResumePreview'; // Import the ResumePreview component
 import { Button } from '@/components/ui/button';
-import { Download, Trash } from 'lucide-react';
+import { Download, Trash, FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import './styles.css';
+import html2pdf from 'html2pdf.js'; // Import the html2pdf library
 
 const initialResumeData = {
   personalInfo: {
@@ -33,6 +35,7 @@ const ResumeBuilder = () => {
   const [resumeData, setResumeData] = useState(initialResumeData);
   const [activeTab, setActiveTab] = useState('personal-info');
   const { toast } = useToast();
+  const pdfPreviewRef = useRef(null);
 
   const updateResumeData = (section, data) => {
     setResumeData(prev => ({
@@ -79,9 +82,46 @@ const ResumeBuilder = () => {
   };
 
   const handleExport = () => {
+    if (!pdfPreviewRef.current) {
+      toast({
+        title: "Export Failed",
+        description: "Could not generate PDF. Please try again.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    const element = pdfPreviewRef.current;
+    const filename = `${resumeData.personalInfo.name || 'Resume'}_${new Date().toISOString().slice(0, 10)}.pdf`;
+    
+    // Configure PDF options
+    const options = {
+      margin: [10, 10, 10, 10],
+      filename: filename,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+
+    // Show a toast notification when the export starts
     toast({
-      title: "PDF Export",
-      description: "PDF export functionality will be implemented soon.",
+      title: "Generating PDF",
+      description: "Your resume is being exported. Please wait...",
+    });
+
+    // Generate the PDF
+    html2pdf().from(element).set(options).save().then(() => {
+      toast({
+        title: "PDF Export Complete",
+        description: `Your resume has been exported as ${filename}`,
+      });
+    }).catch(error => {
+      console.error('PDF export error:', error);
+      toast({
+        title: "Export Failed",
+        description: "Could not generate PDF. Please try again.",
+        variant: "destructive"
+      });
     });
   };
 
@@ -173,93 +213,12 @@ const ResumeBuilder = () => {
         {/* Resume Preview Section */}
         <div className="preview-section">
           <h2 className="preview-heading">Resume Preview</h2>
-          <div className="preview-table-container">
-            <table className="resume-preview-table">
-              <thead>
-                <tr>
-                  <th>Section</th>
-                  <th>Details</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Personal Info</td>
-                  <td>
-                    {resumeData.personalInfo.name && (
-                      <div>
-                        <strong>Name:</strong> {resumeData.personalInfo.name}<br />
-                        <strong>Email:</strong> {resumeData.personalInfo.email || 'N/A'}<br />
-                        <strong>Phone:</strong> {resumeData.personalInfo.phone || 'N/A'}<br />
-                        <strong>Location:</strong> {resumeData.personalInfo.location || 'N/A'}<br />
-                        <strong>LinkedIn:</strong> {resumeData.personalInfo.linkedin || 'N/A'}<br />
-                        <strong>Website:</strong> {resumeData.personalInfo.website || 'N/A'}
-                      </div>
-                    )}
-                    {!resumeData.personalInfo.name && 'Not provided'}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Summary</td>
-                  <td>{resumeData.summary || 'Not provided'}</td>
-                </tr>
-                <tr>
-                  <td>Skills</td>
-                  <td>
-                    {resumeData.skills.length > 0 ? (
-                      <ul>
-                        {resumeData.skills.map((skill, index) => (
-                          <li key={index}>{skill}</li>
-                        ))}
-                      </ul>
-                    ) : 'Not provided'}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Experience</td>
-                  <td>
-                    {resumeData.experience.length > 0 ? (
-                      <ul>
-                        {resumeData.experience.map((exp, index) => (
-                          <li key={index}>
-                            <strong>{exp.title}</strong> at {exp.company} ({exp.startDate} - {exp.endDate || 'Present'})<br />
-                            {exp.description}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : 'Not provided'}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Education</td>
-                  <td>
-                    {resumeData.education.length > 0 ? (
-                      <ul>
-                        {resumeData.education.map((edu, index) => (
-                          <li key={index}>
-                            <strong>{edu.degree}</strong>, {edu.institution} ({edu.startDate} - {edu.endDate || 'Present'})
-                          </li>
-                        ))}
-                      </ul>
-                    ) : 'Not provided'}
-                  </td>
-                </tr>
-                <tr>
-                  <td>Projects</td>
-                  <td>
-                    {resumeData.projects.length > 0 ? (
-                      <ul>
-                        {resumeData.projects.map((project, index) => (
-                          <li key={index}>
-                            <strong>{project.name}</strong><br />
-                            {project.description}
-                          </li>
-                        ))}
-                      </ul>
-                    ) : 'Not provided'}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          
+          {/* Clean styled preview for PDF export */}
+          <div className="pdf-preview">
+            <div className="pdf-preview-content" ref={pdfPreviewRef}>
+              <ResumePreview data={resumeData} />
+            </div>
           </div>
         </div>
       </div>
