@@ -23,21 +23,23 @@ export default function CareerCompassDashboard() {
     <div className="dashboard-container">
       <ParticlesComponent id="tsparticles" />
       <div className="dashboard-content">
-        <div className="dashboard-header">
-          <div className="dashboard-title-container">
+      <div className="dashboard-header">
+        <div className="dashboard-title-container">
+          <div className="logo-title-row">
             <img src={botImage} alt="CareerCompass AI Bot" className="dashboard-bot" />
             <h1 className="dashboard-title">CareerCraft</h1>
-            <p className="dashboard-subtitle">Reflects the process of crafting a career path.</p>
           </div>
-          <SignedIn>
-            <div className="dashboard-auth">
-              <UserButton afterSignOutUrl="/" />
-              <SignOutButton>
-                <button className="signout-button">Sign Out</button>
-              </SignOutButton>
-            </div>
-          </SignedIn>
+          <p className="dashboard-subtitle">Reflects the process of crafting a career path.</p>
         </div>
+        <SignedIn>
+          <div className="dashboard-auth">
+            <UserButton afterSignOutUrl="/" />
+            <SignOutButton>
+              <button className="signout-button">Sign Out</button>
+            </SignOutButton>
+          </div>
+        </SignedIn>
+      </div>
         <div className="card-section">
           <div className="card-grid">
             <Card 
