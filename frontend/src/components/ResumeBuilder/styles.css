@@ -1,46 +1,49 @@
 /* styles.css */
 
-/* Global styles */
+/* Global styles with improved typography and colors */
 body {
-  background-color: #f5faff; /* Light blue background */
-  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #334155;
   margin: 0;
   padding: 0;
+  line-height: 1.5;
 }
 
-/* Container */
+/* Container with better spacing */
 .resume-builder-container {
-  background-color: #f5faff;
+  background-color: #f8fafc;
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: 3rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Heading and subtitle */
+/* More refined heading styles */
 .resume-builder-container h1 {
-  color: #1e3a8a;
-  font-size: 2.5rem;
+  color: #0f172a;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-align: center;
+  letter-spacing: -0.025em;
 }
 
 .resume-builder-container .text-gray-600 {
-  color: #6b7280;
+  color: #64748b;
   font-size: 1rem;
-  line-height: 1.5;
+  font-weight: 400;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-/* Grid layout for the main container */
+/* Improved grid layout with better max-width */
 .resume-builder-container .grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 2rem;
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -49,33 +52,33 @@ body {
   width: 100%;
 }
 
-/* Card styling */
+/* Enhanced card styling with subtle shadow */
 .resume-builder-container .resume-card {
   background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: none;
-  transition: transform 0.2s ease-in-out;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f1f5f9;
+  transition: all 0.2s ease-in-out;
 }
 
 .resume-builder-container .resume-card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Card content */
+/* Card content padding */
 .resume-builder-container .card-content {
-  padding: 1.5rem;
+  padding: 1.75rem;
 }
 
-/* Headings */
+/* Subheadings */
 .resume-builder-container h2 {
-  color: #1e3a8a;
+  color: #0f172a;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
-/* Tabs styling */
+/* Improved tabs styling */
 .resume-builder-container .tabs {
   margin-top: 1.5rem;
 }
@@ -83,57 +86,66 @@ body {
 .resume-builder-container .tabs-list {
   display: grid;
   gap: 0.5rem;
-  background-color: #f5faff;
+  background-color: #f1f5f9;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .resume-builder-container .tabs-trigger {
   background-color: #fff;
-  color: #1e3a8a;
-  padding: 0.5rem 1rem;
+  color: #334155;
+  padding: 0.625rem 1rem;
   border-radius: 0.5rem;
   font-weight: 500;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
 }
 
 .resume-builder-container .tabs-trigger:hover {
-  background-color: #e0f2fe;
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
 }
 
 .resume-builder-container .tabs-trigger[data-state="active"] {
-  background-color: #1e3a8a;
+  background-color: #0f172a;
   color: #fff;
+  border-color: #0f172a;
 }
 
 /* Tab content */
 .resume-builder-container .tab-content {
-  margin-top: 1rem;
-}
-
-/* Buttons */
-.resume-builder-container .button-group {
-  display: flex;
-  justify-content: space-between;
   margin-top: 1.5rem;
 }
 
+/* Button group with better spacing */
+.resume-builder-container .button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+/* Enhanced button styling */
 .resume-builder-container .button {
-  background-color: #1e3a8a;
+  background-color: #0f172a;
   color: #fff;
   padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
+  border-radius: 0.375rem;
   border: none;
   font-weight: 500;
+  font-size: 0.875rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .resume-builder-container .button:hover {
-  background-color: #2563eb;
+  background-color: #1e293b;
+  transform: translateY(-1px);
 }
 
 .resume-builder-container .button-destructive {
@@ -147,64 +159,83 @@ body {
 
 /* Progress Tracker */
 .resume-builder-container .progress-tracker {
-  background-color: #e5e7eb;
-  border-radius: 0.5rem;
+  background-color: #e2e8f0;
+  border-radius: 9999px;
   height: 0.5rem;
   overflow: hidden;
   margin-bottom: 1.5rem;
 }
 
 .resume-builder-container .progress-tracker > div {
-  background-color: #1e3a8a;
+  background-color: #0f172a;
   height: 100%;
   transition: width 0.3s ease;
 }
 
-/* Preview section */
+/* Preview section with better styling */
 .resume-builder-container .preview-section {
   width: 100%;
 }
 
 .resume-builder-container .preview-heading {
-  color: #1e3a8a;
+  color: #0f172a;
   font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   text-align: center;
+  letter-spacing: -0.025em;
 }
 
-/* Table container */
+/* Table container with better overflow handling */
 .resume-builder-container .preview-table-container {
   width: 100%;
   overflow-x: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
-/* Table styling */
+/* Enhanced table styling */
 .resume-builder-container .resume-preview-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: #fff;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 }
 
 /* Table headers */
 .resume-builder-container .resume-preview-table th {
-  background-color: #e0f2fe;
-  color: #1e3a8a;
+  background-color: #f1f5f9;
+  color: #0f172a;
   font-weight: 600;
-  padding: 0.75rem;
+  font-size: 0.875rem;
+  padding: 1rem;
   text-align: left;
-  border-bottom: 1px solid #d1d5db;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-/* Table cells */
+.resume-builder-container .resume-preview-table th:first-child {
+  border-top-left-radius: 0.5rem;
+}
+
+.resume-builder-container .resume-preview-table th:last-child {
+  border-top-right-radius: 0.5rem;
+}
+
+/* Table cells with improved spacing */
 .resume-builder-container .resume-preview-table td {
-  color: #6b7280;
-  padding: 0.75rem;
-  border-bottom: 1px solid #d1d5db;
+  color: #475569;
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
   font-size: 0.875rem;
+  vertical-align: top;
+}
+
+/* First column styling */
+.resume-builder-container .resume-preview-table td:first-child {
+  font-weight: 500;
+  width: 25%;
+  background-color: #f8fafc;
 }
 
 /* Last row border */
@@ -212,15 +243,63 @@ body {
   border-bottom: none;
 }
 
-/* Hover effect for table rows */
-.resume-builder-container .resume-preview-table tbody tr:hover {
-  background-color: #f5faff;
+.resume-builder-container .resume-preview-table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5rem;
 }
 
-/* Responsive adjustments */
+.resume-builder-container .resume-preview-table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
+}
+
+/* Subtle hover effect */
+.resume-builder-container .resume-preview-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Form elements styling */
+.resume-builder-container input,
+.resume-builder-container textarea {
+  border-color: #e2e8f0;
+  border-radius: 0.375rem;
+  transition: border-color 0.2s ease;
+}
+
+.resume-builder-container input:focus,
+.resume-builder-container textarea:focus {
+  border-color: #94a3b8;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.1);
+}
+
+/* Skill tags */
+.resume-builder-container .bg-primary\/10 {
+  background-color: rgba(15, 23, 42, 0.1);
+}
+
+.resume-builder-container .text-primary {
+  color: #0f172a;
+}
+
+/* PDF preview section */
+.pdf-preview {
+  margin-top: 2rem;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  border: 1px solid #e2e8f0;
+}
+
+.pdf-preview-content {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+
+/* Responsive adjustments with better breakpoints */
 @media (min-width: 1024px) {
   .resume-builder-container .grid {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
+    gap: 2.5rem;
   }
 
   .resume-builder-container .tabs-list {
@@ -228,8 +307,32 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .resume-builder-container .grid {
+    grid-template-columns: 1fr;
+    max-width: 800px;
+  }
+  
   .resume-builder-container .tabs-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .resume-builder-container .tabs-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .resume-builder-container .button-group {
+    flex-direction: column;
+  }
+  
+  .resume-builder-container .button {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .resume-builder-container h1 {
+    font-size: 1.875rem;
   }
 }
