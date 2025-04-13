@@ -1,6 +1,12 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
+import axios from 'axios';
+import { AuthContext } from '../../context/AuthContext';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { Download, Trash, FileText } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import html2pdf from 'html2pdf.js';
 import ProgressTracker from './ProgressTracker';
 import PersonalInfoForm from './PersonalInfoForm';
 import SummaryForm from './SummaryForm';
@@ -8,12 +14,8 @@ import SkillsForm from './SkillsForm';
 import ExperienceForm from './ExperienceForm';
 import EducationForm from './EducationForm';
 import ProjectsForm from './ProjectForm';
-import ResumePreview from './ResumePreview'; // Import the ResumePreview component
-import { Button } from '@/components/ui/button';
-import { Download, Trash, FileText } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import ResumePreview from './ResumePreview';
 import './styles.css';
-import html2pdf from 'html2pdf.js'; // Import the html2pdf library
 
 const initialResumeData = {
   personalInfo: {
@@ -32,8 +34,10 @@ const initialResumeData = {
 };
 
 const ResumeBuilder = () => {
+  // const { user } = useContext(AuthContext);
   const [resumeData, setResumeData] = useState(initialResumeData);
   const [activeTab, setActiveTab] = useState('personal-info');
+  const [error, setError] = useState('');
   const { toast } = useToast();
   const pdfPreviewRef = useRef(null);
 
@@ -93,8 +97,7 @@ const ResumeBuilder = () => {
 
     const element = pdfPreviewRef.current;
     const filename = `${resumeData.personalInfo.name || 'Resume'}_${new Date().toISOString().slice(0, 10)}.pdf`;
-    
-    // Configure PDF options
+
     const options = {
       margin: [10, 10, 10, 10],
       filename: filename,
@@ -103,13 +106,11 @@ const ResumeBuilder = () => {
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
 
-    // Show a toast notification when the export starts
     toast({
       title: "Generating PDF",
       description: "Your resume is being exported. Please wait...",
     });
 
-    // Generate the PDF
     html2pdf().from(element).set(options).save().then(() => {
       toast({
         title: "PDF Export Complete",
@@ -125,10 +126,32 @@ const ResumeBuilder = () => {
     });
   };
 
+  const saveResume = async () => {
+    try {
+      await axios.post(
+        `${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/resume`,
+        resumeData,
+        { headers: { Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzQ0NDg1NjE0LCJleHAiOjE3NDQ0ODkyMTR9.2omVBE6s6DNCsaC-dMCahFk347y6ekwZXkLU0H4Nv68` } }
+      );
+      toast({
+        title: "Resume Saved",
+        description: "Your resume has been successfully saved.",
+      });
+    } catch (err) {
+      setError('Failed to save resume');
+      toast({
+        title: "Save Failed",
+        description: "Could not save your resume. Please try again.",
+        variant: "destructive"
+      });
+    }
+  };
+
   return (
     <div className="resume-builder-container">
       <h1>Resume Builder</h1>
       <p className="text-gray-600">Create a professional resume with ease.</p>
+      {error && <p className="error">{error}</p>}
 
       <div className="grid">
         {/* Form Section */}
@@ -205,6 +228,13 @@ const ResumeBuilder = () => {
                   <Download size={16} />
                   Export PDF
                 </Button>
+                <Button
+                  onClick={saveResume}
+                  className="button"
+                >
+                  <FileText size={16} />
+                  Save Resume
+                </Button>
               </div>
             </CardContent>
           </Card>
@@ -213,8 +243,6 @@ const ResumeBuilder = () => {
         {/* Resume Preview Section */}
         <div className="preview-section">
           <h2 className="preview-heading">Resume Preview</h2>
-          
-          {/* Clean styled preview for PDF export */}
           <div className="pdf-preview">
             <div className="pdf-preview-content" ref={pdfPreviewRef}>
               <ResumePreview data={resumeData} />

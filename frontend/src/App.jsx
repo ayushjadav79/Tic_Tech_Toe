@@ -20,7 +20,7 @@ import SkillsForm from './components/ResumeBuilder/SkillsForm';
 import ResumePreview from './components/ResumeBuilder/ResumePreview';
 import SummaryForm from './components/ResumeBuilder/SummaryForm';
 import ParticlesComponent from './components/Particles';
-
+import CreateAssessmentForm from 'D:/Coding/React programs/Hacktastic/frontend/src/CreateAssessmentForm.jsx';
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
           <>
             <SignedIn>
               <ParticlesComponent id="particles" />
-                <Dashboard />
+              <Dashboard />
             </SignedIn>
             <SignedOut>
               <RedirectToSignIn />
@@ -54,6 +54,15 @@ function App() {
       <Route path="/resume-preview" element={<ResumePreview />} />
       <Route path="/skills-form" element={<SkillsForm />} />
       <Route path="/summary-form" element={<SummaryForm />} />
+      <Route
+        path="/create-assessment"
+        element={
+          <div>
+            <h1>Welcome to the Assessment System</h1>
+            <CreateAssessmentForm />
+          </div>
+        }
+      />
     </Routes>
   );
 }

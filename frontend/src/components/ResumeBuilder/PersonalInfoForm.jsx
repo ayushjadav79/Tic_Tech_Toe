@@ -22,17 +22,16 @@ const PersonalInfoForm = ({ data, updateData }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(`Input changed: ${name} = ${value}`);
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => {
+      const updated = { ...prev, [name]: value };
+      updateData(updated); // Update parent state on every change
+      return updated;
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Submitting formData:', formData);
-    updateData(formData);
     toast({
       title: "Personal information saved",
       description: "Your personal information has been updated.",
